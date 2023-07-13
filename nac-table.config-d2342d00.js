@@ -1,5 +1,5 @@
 const config = {
-  controlName: 'Nac Table',
+  controlName: 'Dynamic Table',
   description: 'Editable Table for NAC',
   groupName: 'Custom PMA Controls',
   fallbackDisableSubmit: false,
