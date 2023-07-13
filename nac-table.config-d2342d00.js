@@ -1,7 +1,7 @@
 const config = {
   controlName: 'Nac Table',
   description: 'Editable Table for NAC',
-  groupName: 'Presales Controls',
+  groupName: 'Custom PMA Controls',
   fallbackDisableSubmit: false,
   standardProperties: {
     readOnly: false,
