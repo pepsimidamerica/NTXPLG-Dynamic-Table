@@ -386,15 +386,15 @@ _decorate([e$1("lit-toolbar")], function (_initialize, _LitElement) {
   };
 }, s);
 
-let AndysTable = _decorate([e$1('andys-table')], function (_initialize, _LitElement) {
-  class AndysTable extends _LitElement {
+let DynamicTable = _decorate([e$1('dynamic-table')], function (_initialize, _LitElement) {
+  class DynamicTable extends _LitElement {
     constructor(...args) {
       super(...args);
       _initialize(this);
     }
   }
   return {
-    F: AndysTable,
+    F: DynamicTable,
     d: [{
       kind: "field",
       static: true,
@@ -659,7 +659,7 @@ let AndysTable = _decorate([e$1('andys-table')], function (_initialize, _LitElem
         @discard-row="${this.onDiscardRow}"
         .editMode="${this.editMode}"
         .hasSelectedRow="${!!this.selectedRow}"
-        
+
       ></lit-toolbar>
     `;
       }
@@ -676,7 +676,7 @@ let AndysTable = _decorate([e$1('andys-table')], function (_initialize, _LitElem
         <table>
           <thead>
             <tr>
-              
+
               ${this.columns.map(column => y`
                   <th @click="${() => this.onSortClick(column.field)}">
                     ${y`<span class="flex-item">
@@ -711,7 +711,7 @@ let AndysTable = _decorate([e$1('andys-table')], function (_initialize, _LitElem
           </thead>
           <tbody>
             ${this.pageData.map(item => y`
-              
+
                 <tr
                   @click="${() => {
           if (this.readonly) return;
@@ -764,9 +764,9 @@ let AndysTable = _decorate([e$1('andys-table')], function (_initialize, _LitElem
           </tbody>
         </table>
       </div>
-      ${this.onLoad(this.collection)}                    
+      ${this.onLoad(this.collection)}
       ${this.totalPages > 1 ? this.renderPagination() : null}
-      
+
     `;
       }
     }, {
@@ -853,10 +853,10 @@ let AndysTable = _decorate([e$1('andys-table')], function (_initialize, _LitElem
         </button>
       </div>
       <script>
-        
-  const nacTable = document.querySelector("andys-table");
 
-  
+  const nacTable = document.querySelector("dynamic-table");
+
+
 </script>
     `;
       }
@@ -1005,4 +1005,4 @@ let AndysTable = _decorate([e$1('andys-table')], function (_initialize, _LitElem
   };
 }, s);
 
-export { AndysTable };
+export { DynamicTable };
