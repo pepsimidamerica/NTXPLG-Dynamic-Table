@@ -493,14 +493,14 @@ let DynamicTable = _decorate([e$1('dynamic-table')], function (_initialize, _Lit
       kind: "get",
       key: "filteredData",
       value:
-      // @property({ type: Boolean })
-      // readOnly = false;
+        // @property({ type: Boolean })
+        // readOnly = false;
 
-      function filteredData() {
-        return this.data.filter(item => {
-          return Object.values(item).map(val => String(val)).some(val => val.toLowerCase().includes(this.searchText.toLowerCase()));
-        });
-      }
+        function filteredData() {
+          return this.data.filter(item => {
+            return Object.values(item).map(val => String(val)).some(val => val.toLowerCase().includes(this.searchText.toLowerCase()));
+          });
+        }
     }, {
       kind: "get",
       key: "sortedData",
@@ -640,9 +640,9 @@ let DynamicTable = _decorate([e$1('dynamic-table')], function (_initialize, _Lit
         placeholder="Search..."
 
         @input=${event => {
-          this.searchText = event.target.value;
-          this.updatePageData();
-        }}
+            this.searchText = event.target.value;
+            this.updatePageData();
+          }}
       />
     </div> `;
       }
@@ -714,17 +714,17 @@ let DynamicTable = _decorate([e$1('dynamic-table')], function (_initialize, _Lit
 
                 <tr
                   @click="${() => {
-          if (this.readonly) return;
-          if (this.editMode && this.selectedRow !== item) {
-            this.unselect();
-          }
-          if (this.selectedRow === item && !this.editMode) {
-            this.selectedRow = null;
-          } else {
-            this.selectedRow = item;
-          }
-          this.requestUpdate();
-        }}"
+            if (this.readonly) return;
+            if (this.editMode && this.selectedRow !== item) {
+              this.unselect();
+            }
+            if (this.selectedRow === item && !this.editMode) {
+              this.selectedRow = null;
+            } else {
+              this.selectedRow = item;
+            }
+            this.requestUpdate();
+          }}"
                   class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
                 >
                   ${this.columns.map(column => y`
@@ -734,25 +734,25 @@ let DynamicTable = _decorate([e$1('dynamic-table')], function (_initialize, _Lit
                               .value="${item[column.field]}"
                               class="table-cell-input input-styled"
                               @input="${event => this.onCellEdit({
-          field: column.field,
-          value: event.target.value
-        })}"
+            field: column.field,
+            value: event.target.value
+          })}"
                               @focus="${() => {
-          this.editCell = {
-            columnName: column.field,
-            row: item
-          };
-          this.requestUpdate();
-        }}"
+                this.editCell = {
+                  columnName: column.field,
+                  row: item
+                };
+                this.requestUpdate();
+              }}"
                               @blur="${() => {
-          if (this.editCell?.row === item) {
-            this.editCell = {
-              columnName: column.field,
-              row: item
-            };
-            this.requestUpdate();
-          }
-        }}"
+                if (this.editCell?.row === item) {
+                  this.editCell = {
+                    columnName: column.field,
+                    row: item
+                  };
+                  this.requestUpdate();
+                }
+              }}"
                               ?disabled=${!!this.readonly}
                             />` : y`<span class="table-cell-value"
                               >${item[column.field]}</span
@@ -960,7 +960,7 @@ let DynamicTable = _decorate([e$1('dynamic-table')], function (_initialize, _Lit
         if (this.selectedRow) {
           const editedRow = this.pageData.find(item => item === this.selectedRow);
           if (editedRow) {
-            this.columns.forEach(column => {});
+            this.columns.forEach(column => { });
             this.editMode = false;
             this.editCell = null;
             this.requestUpdate();
